@@ -14,7 +14,7 @@
 
 \begin{abstract}
 
-Quantum mechanics is one of the most important theories in every physicist's toolbox. Nevertheless, in many situations the mathematical underpinnings of the theory are often disregarded as non important by many instructors. To show why this is not the case, we will briefly discuss arguably the most important question in quantum mechanics. We will see that it cannot be treated without knowledge of the mathematical structure of the theory.
+Quantum mechanics is one of the most important theories in every physicist's toolbox. Nevertheless, in many situations the mathematical underpinnings of the theory are often disregarded as non important by many instructors. To show why this is not the case, we will briefly discuss arguably the most important question in quantum mechanics: ``what is the probability that the measurement of the observable $A$ on a system in the state $\rho$ will yield a value in the measurable set $E\subseteq\mathbb{R}$?''. We will see that it cannot be treated without knowledge of the mathematical structure of the theory. In the way we will be forced to consider at depth Hilbert spaces, measure theory, bounded and unbounded operators, spectrum, states, and the spectral theorem. 
 
 \end{abstract}
 
@@ -118,17 +118,20 @@ One can then check that for a pure state $\rho_\psi$
 \langle\psi,0\rangle = 0 & \frac{\hbar}{2},-\frac{\hbar}{2}\not\in E\\
 \langle \psi,(\psi_1,0)\rangle = \|\psi_1\|^2 & \frac{\hbar}{2}\in E, ~ -\frac{\hbar}{2}\not\in E\\
 \langle \psi,(0,\psi_2)\rangle = \|\psi_2\|^2 & -\frac{\hbar}{2}\in E, ~ \frac{\hbar}{2}\not\in E\\
-\langle \psi,\psi\rangle = \|psi\|^2 = 1 & \frac{\hbar}{2},-\frac{\hbar}{2}\in E
+\langle \psi,\psi\rangle = \|\psi\|^2 = 1 & \frac{\hbar}{2},-\frac{\hbar}{2}\in E
 \end{cases}
 \end{split}
 \end{align}
-agreeing with \eqref{eq:spin_probability_measure}.
+agreeing with \eqref{eq:spin_probability_measure}. In this last case \eqref{eq:spectral_theorem} reduces to the usual spectral theorem
+\begin{equation}
+S_3=\int_\mathbb{R}\lambda dP_{S_3}(\lambda)=\frac{\hbar}{2}\qty(P_{S_3}\qty(\qty{\frac{\hbar}{2}})-P_{S_3}\qty(\qty{-\frac{\hbar}{2}}))
+\end{equation}
 
 Note that the spectral theorem has other uses in quantum mechanics. A favorite is that of defining functions of operators. It is common to observe definitions such as
 \begin{equation}
 e^A=\sum_{n=0}^\infty\frac{A^n}{n!}
 \end{equation}  
-for an observable $A$. This is okay to do as long we stick to bounded operators. This is because for this definition to make sense, we need a way to evaluate the convergence of such a series. In the case of bounded operators, the operator norm provides a criteria for convergence in exactly the same manner that the absolute value allows us to understand convergence in the real numbers. However, in the case of unbounded operators, this is no longer the case. Still, in the case of unbounded operators, we may define such an expression by
+for an observable $A$. This is okay to do as long we stick to bounded operators. This is because for this definition to make sense, we need a way to evaluate the convergence of such a series. In the case of bounded operators, the operator norm provides a criteria for convergence in exactly the same manner that the absolute value allows us to understand convergence in the real numbers. However, in the case of unbounded operators, this is no longer the case. Still, in the case of unbounded operators, we may define such an expression by\footnote{Compare with the definition given by Dirac in \cite{Dirac1958}.}
 \begin{equation}
 f(A)=\int_\mathbb{R}f(\lambda)dP_A(\lambda)
 \end{equation}
